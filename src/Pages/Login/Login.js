@@ -60,8 +60,8 @@ const Login = () => {
 
                         </div>
                     </form>
-                    {error}
-                    <p className='text-center'>Allready have an account <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
+                    <p className='text-orange-600'>{error}</p>
+                    <p className='text-center'>New to Swanky Travel ? please <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
                 </div>
             </div>
         </div >

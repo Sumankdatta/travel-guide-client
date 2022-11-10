@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo'
-import Login from '../../Pages/Login/Login';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+
+import {  FaUser } from 'react-icons/fa';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
 
     const menuItems = <>
         <li>
             <Link to='/'>Home</Link>
-            
+            <Link to='/blog'>Blog</Link>
+
         </li>
     </>
+
+    const handalLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.error('error', error)
+            })
+    }
 
     return (
         <div className="navbar bg-base-100 max-w-screen-xl mx-auto">
@@ -31,16 +43,34 @@ const Header = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal font-bold p-0">
 
                     {menuItems}
 
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to='/login'>login</Link>
-                <Link to='/signup'>Sign up</Link>
-                <button className="btn btn-outline btn-warning">Warning</button>
+            <div className="navbar-end mr-20 gap-x-3">
+
+                {
+                    user?.uid ?
+                        <>
+                            <span>{user?.displayName}</span>
+                            <button onClick={handalLogout} className="btn btn-outline btn-primary">Log Out</button>
+                        </>
+
+                        :
+                        <div className='menu menu-horizontal font-bold p-0 gap-x-3'>
+                            <Link to='/login'>Login</Link>
+                            <Link to='/signup'>Sign up</Link>
+                        </div>
+
+                }
+                {
+                    user?.uid ?
+                    
+                    <img width="50" height="50" src={user.photoURL} alt="" />
+                        : <FaUser></FaUser>
+                }
             </div>
         </div>
     );

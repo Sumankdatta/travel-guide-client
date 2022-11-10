@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assets/login/login2';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -10,6 +10,7 @@ const SignUp = () => {
 
     const {providerLogIn,createUser}=useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
+    const navigate=useNavigate();
 
 
     const handalGoogleSignIn = () => {
@@ -18,6 +19,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             })
             .catch(error => {
                 console.error('error', error)
@@ -37,6 +39,7 @@ const handleSignup=(event)=>{
             console.log(user)
             form.reset()
             setError(false)
+            navigate('/')
         })
         .catch(error => {
             setError(error.message)
@@ -79,10 +82,11 @@ const handleSignup=(event)=>{
 
                     </div>
                 </form>
-                {error}
+                <p className='text-orange-600'>{error}</p>
+                
                 <p className='text-center'>Or</p>
                 <button onClick={handalGoogleSignIn} className="btn btn-outline btn-success mx-auto my-2"><FcGoogle></FcGoogle></button>
-                <p className='text-center'>New to Swanky Travel <Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
+                <p className='text-center'>Allready have an account ? Please <Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
             </div>
         </div>
     </div >
