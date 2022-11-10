@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo'
+import Login from '../../Pages/Login/Login';
 
 const Header = () => {
 
     const menuItems = <>
         <li>
             <Link to='/'>Home</Link>
-            <Link to='/'>Log in</Link>
-            <Link to='/'>Log out</Link>
+            
         </li>
     </>
 
@@ -38,6 +38,8 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                <Link to='/login'>login</Link>
+                <Link to='/signup'>Sign up</Link>
                 <button className="btn btn-outline btn-warning">Warning</button>
             </div>
         </div>
