@@ -85,7 +85,7 @@ const handleSignup=(event)=>{
                 <p className='text-orange-600'>{error}</p>
                 
                 <p className='text-center'>Or</p>
-                <button onClick={handalGoogleSignIn} className="btn btn-outline btn-success mx-auto my-2"><FcGoogle></FcGoogle></button>
+                <button onClick={handalGoogleSignIn} className="btn btn-outline btn-success mx-auto my-2"><FcGoogle></FcGoogle> Sign Up using Google</button>
                 <p className='text-center'>Allready have an account ? Please <Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
             </div>
         </div>
