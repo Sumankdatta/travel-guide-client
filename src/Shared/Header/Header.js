@@ -68,7 +68,7 @@ const Header = () => {
                 {
                     user?.uid ?
                     
-                    <img width="50" height="50" src={user.photoURL} alt="" />
+                    <img className='rounded-full' width="40" height="40" src={user.photoURL} alt="" />
                         : <FaUser></FaUser>
                 }
             </div>

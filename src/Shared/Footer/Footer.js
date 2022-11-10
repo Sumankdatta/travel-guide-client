@@ -7,7 +7,7 @@ const Footer = () => {
         <div>
           <img width="50" height="50" src={logo} alt="" />
           <p className="font-bold">
-            <span className='text-2xl'>Swanky Travel</span>. <br/>Providing reliable tech since 1992
+            <span className='text-2xl'>Swanky Travel</span>. <br/>Providing reliable travel guide since 2005
           </p> 
           <p>Copyright © 2023 - All right reserved</p>
         </div> 
