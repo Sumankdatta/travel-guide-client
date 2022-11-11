@@ -4,7 +4,7 @@ const ReviewRow = ({ rew }) => {
     const { service, serviceName, customerName, email, phone } = rew;
 const [view,setView]=useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`  https://travel-guide-server-seven.vercel.app/services/${service}`)
         .then(res=>res.json())
         .then(data=>setView(data))
     }, [service])
