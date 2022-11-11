@@ -1,4 +1,5 @@
 import React from 'react';
+import './BannerItems.css'
 
 const BannerItems = ({slide}) => {
 
@@ -15,10 +16,10 @@ const BannerItems = ({slide}) => {
     
     
     <div className="absolute flex justify-between transform -translate-y-1/2 left-24 top-1/4">
-      <h1 className='text-5xl font-bold text-white'>Make Your Holiday <br />Memorable</h1>
+      <h1 className='text-5xl font-bold text-white banner'>Make Your Holiday <br />Memorable</h1>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-24 top-1/2">
-      <p className='text-xl text-white'>Thinking of taking a break from every day's busy life<br />
+      <p className='text-xl text-white banneritems'>Thinking of taking a break from every day's busy life<br />
       Don't worry,We take care of your trip
       </p>
     </div>

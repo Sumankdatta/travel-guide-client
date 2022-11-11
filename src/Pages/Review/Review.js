@@ -5,7 +5,7 @@ import ReviewRow from '../ReviewRow/ReviewRow';
 const Review = () => {
 
     const { user } = useContext(AuthContext);
-    const [reviews, setReviews] = useState({});
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         fetch(`  https://travel-guide-server-seven.vercel.app/reviews?email=${user.email}`)
