@@ -4,7 +4,7 @@ import ServiceCard from '../../Shared/ServiceCard/ServiceCard';
 const Services = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('service.json')
+        fetch('http://localhost:5000/services')
         .then(res =>res.json())
         .then(data=>setServices(data))
     },[])
@@ -26,7 +26,7 @@ const Services = () => {
                 }
                 
             </div>
-            <button className="btn btn-primary text-align-center">Button</button>    
+            <button className="btn btn-primary w-40 grid mx-auto">See All</button>    
         </div>
     );
 };
