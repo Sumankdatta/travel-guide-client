@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Service = () => {
 
     const { title, details, img, cost, duration, _id } = useLoaderData();
     const {user}=useContext(AuthContext)
+    useTitle('service')
 
 
     const handleReviewSubmit=(event)=>{
@@ -15,6 +17,7 @@ const Service = () => {
         const email=user?.email || 'unregistered';
         const phone=form.phone.value;
         const review=form.review.value;
+        
 
 
         const reviews ={

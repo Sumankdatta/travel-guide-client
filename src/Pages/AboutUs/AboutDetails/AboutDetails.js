@@ -3,8 +3,11 @@ import img1 from '../../../assets/area/sundorbon'
 import img2 from '../../../assets/area/ctgn'
 import img3 from '../../../assets/area/srimongal'
 import img4 from '../../../assets/area/paharpu'
+import useTitle from '../../../hooks/useTitle';
 
 const AboutDetails = () => {
+
+    useTitle('Location')
     return (
         <div className='my-20'>
         <h1 className='text-4xl text-orange-600 text-center my-20 text-orange-600'>Top 30 Tourist Places of Bangladesh</h1>

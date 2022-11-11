@@ -3,8 +3,10 @@ import img1 from '../../assets/blog/sql'
 import img2 from '../../assets/blog/jwt'
 import img3 from '../../assets/blog/jn'
 import img4 from '../../assets/blog/jp'
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div className='my-20'>
             <h1 className='text-4xl text-orange-600 text-center my-20 text-orange-600'>Welcome To Blog</h1>
