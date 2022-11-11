@@ -25,6 +25,7 @@ const SignUp = () => {
             .catch(error => {
                 console.error('error', error)
             })
+
     }
 
 const handleSignup=(event)=>{
